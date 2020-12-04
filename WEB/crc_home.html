@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<link href="style.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <meta charset="utf-8">
+        <title>CRC</title>
+    </head>
+    <body>
+	<h1><img width="90" src="logo_rsvo.png" alt="home page" border="0">CRC & Output/Input dropped packets</h1>
+	<br>
+	<p>Чтобы посмотреть статистику за определенное количество дней для определенного порта оборудования, воспользуйтесь следующей формой:</p>
+	<br>
+	<form action="cgi-bin/crc_statistic_port.py" method="get" class="Form">
+	<table>
+	<tr>
+        	<td>ip address:</td>
+        	<td><input type="text" name="address" required></td>
+        </tr>
+        <tr>
+		<td>port:</td>
+		<td><select name="port_type">
+                <option value="Gi">Gi</option>
+                <option value="Fa">Fa</option>
+                <option value="Te">Te</option>
+                </select>
+            	<input type="text" name="port_number" value="0/1" required></td>
+        </tr>
+        <tr>
+            	<td>количество дней:</td>
+            	<td><input type="text" name="days" value="10" required></td>
+        </tr>
+	</table>
+        <input type="submit" value="Получить статистику" class="button-link">
+	</form>
+	<br><br>
+	<p>Чтобы посмотреть значения CRC/Output dropped packets/Input dropped packets на портах всех устройств cisco за последние 24 часа с 00:00 часов предыдущего дня до 00:00 часов сегодняшнего дня, нажмите на кнопку ниже:</p>
+	<br>
+	<a class="button-link" href="cgi-bin/crc_statistic_all_24h.py"
+        target="_parent">Получить статистику</a>
+	<br><br><hr>
+    </body>
+</html>
+
+
